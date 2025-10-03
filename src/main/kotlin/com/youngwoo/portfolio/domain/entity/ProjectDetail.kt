@@ -7,7 +7,7 @@ import org.hibernate.validator.constraints.URL
 
 class ProjectDetail(
     content: String,
-    url: String,
+    url: String?,
     isActive: Boolean
 ) : BaseEntity() {
 
@@ -19,7 +19,7 @@ class ProjectDetail(
 
     var content: String = content
 
-    var url: String = url
+    var url: String? = url
 
     var isActive : Boolean = isActive
 

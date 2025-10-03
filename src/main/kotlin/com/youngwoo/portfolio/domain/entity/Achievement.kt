@@ -1,6 +1,7 @@
 package com.youngwoo.portfolio.domain.entity
 
 import jakarta.persistence.*
+import java.time.LocalDate
 import java.time.LocalDateTime
 
 @Entity
@@ -8,7 +9,7 @@ import java.time.LocalDateTime
 class Achievement (
     title: String,
     description: String,
-    achievedDate: LocalDateTime?,
+    achievedDate: LocalDate?,
     host: String,
     isActive: Boolean
     ): BaseEntity() {
@@ -23,7 +24,7 @@ class Achievement (
 
     var description: String = description
 
-    var achievedDate: LocalDateTime? = achievedDate
+    var achievedDate: LocalDate? = achievedDate
 
     var host: String = host
 
