@@ -41,7 +41,7 @@ class Project(
     @JoinColumn(name = "project_id")
     var details: MutableList<ProjectDetail> = mutableListOf() // 빈 리스트 넣는다.
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", fetch = FetchType.LAZY, cascade = [CascadeType.PERSIST])
     var skills : MutableList<ProjectSkill> = mutableListOf() // 빈 리스트 넣는다.
 
     fun getEndYearMonth(): String

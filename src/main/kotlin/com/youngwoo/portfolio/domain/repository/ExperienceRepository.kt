@@ -11,5 +11,5 @@ interface ExperienceRepository : JpaRepository<Experience, Long> {
 
     fun findAllByIsActive(isActive: Boolean) : List<Experience>
 
-
+    override fun findById(id: Long): Optional<Experience>
 }
