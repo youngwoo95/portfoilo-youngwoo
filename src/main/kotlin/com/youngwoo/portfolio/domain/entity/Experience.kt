@@ -1,6 +1,7 @@
 package com.youngwoo.portfolio.domain.entity
 
 import jakarta.persistence.*
+import org.springframework.data.annotation.CreatedDate
 
 @Entity
 
@@ -11,6 +12,8 @@ class Experience : BaseEntity() {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "experience_id")
     var id: Long? = null
+
+
 
 
 }

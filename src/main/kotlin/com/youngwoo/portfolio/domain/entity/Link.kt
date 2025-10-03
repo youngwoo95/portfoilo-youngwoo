@@ -4,7 +4,11 @@ import jakarta.persistence.*
 
 @Entity
 
-class Link : BaseEntity() {
+class Link(
+    name: String,
+    content: String,
+    isActive: Boolean
+) : BaseEntity() {
 
     @Id
     /* PK 임을 명시 */
@@ -12,5 +16,10 @@ class Link : BaseEntity() {
     @Column(name = "link_id")
     var id: Long? = null
 
+    var name: String = name
+
+    var content: String = content
+
+    var isActive : Boolean = isActive
 
 }
