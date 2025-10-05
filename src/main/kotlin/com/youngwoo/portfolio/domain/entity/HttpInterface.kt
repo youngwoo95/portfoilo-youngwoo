@@ -16,9 +16,8 @@ class HttpInterface(
     @Column(name = "http_interface_id")
     var id: Long? = null
 
-    var cookies: String? = httpServletRequest.cookies
-    ?.map { "${it.name}:${it.value}" }
-    ?.toString()
+    @Column(length = 4096)
+    var cookies: String? = httpServletRequest.cookies?.map { "${it.name}:${it.value}" }?.toString()
 
     var referer: String? = httpServletRequest.getHeader("referer")
 
@@ -30,6 +29,7 @@ class HttpInterface(
 
     var requestUri: String? = httpServletRequest.requestURI
 
-    var userAgent: String? = httpServletRequest.getHeader("userAgent")
+    @Column(length = 1024)
+    var userAgent: String? = httpServletRequest.getHeader("user-agent")
 
 }
