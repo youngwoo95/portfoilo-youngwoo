@@ -37,7 +37,7 @@ class Experience(
 
     // 1:N 관계
     @OneToMany(targetEntity = ExperienceDetail::class,
-        fetch = FetchType.LAZY,
+        fetch = FetchType.EAGER,
         cascade = [CascadeType.ALL])
     @JoinColumn(name = "experience_id")
     var details: MutableList<ExperienceDetail> = mutableListOf() // 빈 리스트 넣는다.
